@@ -2,13 +2,17 @@ require("dotenv").config({ path: __dirname + '..\\..\\.env' });
 
 import express from 'express'
 import mongoose from 'mongoose'
-import { ApolloServer, gql } from 'apollo-server'
-import { buildSchema } from 'graphql';
-// import { peopleSchema } from './people/people.schema'
-import { peopleResolver } from './people/people.resolver'
+import { ApolloServer } from 'apollo-server'
+
+import { mergeTypeDefs, mergeResolvers } from "@graphql-tools/merge"
+
+import { authorSchema } from './author/author.schema'
+import { authorResolver } from './author/author.resolver'
+
+import { bookSchema } from './book/book.schema'
+import { bookResolver } from './book/book.resolver'
 
 const main = async () => {
-
     // connect to mongoDB
     const connectDB = async () => {
         try {
@@ -21,13 +25,13 @@ const main = async () => {
         }
     }
 
-    connectDB()
+    await connectDB()
 
-    // const resolvers = [peopleResolver] as const;
-    const { typeDefs, resolvers } = buildTypeDefsAndResolvers({
-        resolvers: [peopleResolver],
-        typeDefs: [peopleSchema],
-    });
+    const typeDefs = mergeTypeDefs([authorSchema, bookSchema]);
+    console.log("typedef:" + typeDefs);
+
+    const resolvers = mergeResolvers([authorResolver, bookResolver]);
+    console.log("resolvers:" + resolvers);
 
     const server = new ApolloServer({
         resolvers,
@@ -39,6 +43,6 @@ const main = async () => {
     server.listen().then(({ url }) => {
         console.log(`🚀 Server ready at ${url}`)
     })
-
 }
 
+main()

@@ -1,6 +1,6 @@
-export const peopleResolver = {
+export const authorResolver = {
     Query: {
-        peoples: () => [{
+        authors: () => [{
             id: 1,
             name: "Quan",
             email: "quannguyenthanh558@gmail.com",

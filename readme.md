@@ -1,22 +1,22 @@
-#Test **GraphQL**
+# Test GraphQL
 
 ## Install
-```bash
+```console
 npm init
 
-npm install apollo-server graphql mongoose 
+npm install apollo-server graphql graphql-tools mongoose 
 npm install typescript ts-node ts-lib @types/node -g
-npm install dotenv -g
+npm install dotenv winston -g
 npm install nodemon --save-dev
 ```
 
 ### Configure TS-config
-```bash
+```console
 tsc --init
 ```
 
 Customize `tsconfig.json`:
-```bash
+```json
 {
   "compilerOptions": {
     "target": "es2016",
@@ -41,6 +41,15 @@ Customize `tsconfig.json`:
 
 ## Compile TS to JS
 To watch `TypeScript` file changes and convert to `JavaScript`
-```bash
+```console
 npx tsc -w
 ```
+
+## Customize logger `winston`
+```
+
+```
+
+## Reference
+
+- Merging GraphQL **Schema** and **Resolvers**: [GraphQL Schema and Resolvers](https://www.apollographql.com/docs/graphql-tools/generate-schema/)

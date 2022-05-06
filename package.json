@@ -22,6 +22,7 @@
     "apollo-server": "^3.7.0",
     "dotenv": "^16.0.0",
     "graphql": "^16.4.0",
+    "graphql-tools": "^8.2.8",
     "logger": "^0.0.1",
     "mongoose": "^6.3.2",
     "morgan": "^1.10.0",
