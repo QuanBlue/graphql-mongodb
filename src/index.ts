@@ -1,47 +1,34 @@
 require("dotenv").config({ path: __dirname + '..\\..\\.env' });
 
 import express from 'express'
-import mongoose from 'mongoose'
+import * as database from './config/database.config';
+
 import { ApolloServer } from 'apollo-server'
 
 import { mergeTypeDefs, mergeResolvers } from "@graphql-tools/merge"
 
-import { authorSchema } from './author/author.schema'
-import { authorResolver } from './author/author.resolver'
+import { authorSchema } from './modules/author/author.schema'
+import { authorResolver } from './modules/author/author.resolver'
 
-import { bookSchema } from './book/book.schema'
-import { bookResolver } from './book/book.resolver'
+import { bookSchema } from './modules/book/book.schema'
+import { bookResolver } from './modules/book/book.resolver'
 
 const main = async () => {
     // connect to mongoDB
-    const connectDB = async () => {
-        try {
-            await mongoose.connect(process.env.MONGO_URI)
-
-            console.log('connected to mongoDB')
-        }
-        catch (err) {
-            console.log(err)
-        }
-    }
-
-    await connectDB()
+    database.connect();
 
     const typeDefs = mergeTypeDefs([authorSchema, bookSchema]);
-    console.log("typedef:" + typeDefs);
-
     const resolvers = mergeResolvers([authorResolver, bookResolver]);
-    console.log("resolvers:" + resolvers);
 
     const server = new ApolloServer({
         resolvers,
         typeDefs,
     })
 
-    let url: string = "http://localhost:4000";
+    let url: String = "http://localhost:4000";
 
     server.listen().then(({ url }) => {
-        console.log(`🚀 Server ready at ${url}`)
+        console.log(`[Info] Server ready at ${url}`)
     })
 }
 

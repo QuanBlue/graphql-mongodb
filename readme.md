@@ -6,7 +6,7 @@ npm init
 
 npm install apollo-server graphql graphql-tools mongoose 
 npm install typescript ts-node ts-lib @types/node -g
-npm install dotenv winston -g
+npm install dotenv -g
 npm install nodemon --save-dev
 ```
 
@@ -45,11 +45,25 @@ To watch `TypeScript` file changes and convert to `JavaScript`
 npx tsc -w
 ```
 
-## Customize logger `winston`
+## Hygen
+
+## Running
+```
+npx tsx -w
+npm run dev
 ```
 
-```
+## Construct
+- `Model` and `Service` for work with `MongoDB`
+- `Schema` and `Resolver` for work with `GraphQL`
+
+- `Service` call `Model` to **CRUD** with `MongoDB`
+- `Resolver` for work with `GraphQL`, call `Service` to interact with `Database`
+
+
 
 ## Reference
 
 - Merging GraphQL **Schema** and **Resolvers**: [GraphQL Schema and Resolvers](https://www.apollographql.com/docs/graphql-tools/generate-schema/)
+- **Save**, **Create** and **Insert** in mongoDB: [MongoDB - Save, Create, Insert](https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create)
+- Declare **global type TS**: [TypeScript make type global](https://bobbyhadz.com/blog/typescript-make-types-global) and [Global type in typescript](https://stackoverflow.com/questions/42984889/global-types-in-typescript)
