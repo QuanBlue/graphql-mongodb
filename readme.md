@@ -38,11 +38,13 @@ tsc --init
 }
 ```
 
+- Import **fake data** in `./graphQl/fake data` to your `MongoDB database` with 2 collection `authors` and `books`
+
 - Config `.env` file:
   - Create `.env` file in `./graphQL`
   - Update `.env` file: 
   ``` 
-  MONGO_URI = [mongodb+srv://... (your mongoose URI)]
+  MONGO_URI = [mongodb+srv://... (your MongoDB URI)]
   PORT = 4000
   ```
 
