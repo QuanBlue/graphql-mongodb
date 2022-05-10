@@ -2,9 +2,8 @@
 
 ## Install
 - Install package
-```console
+```bash
 npm init
-
 npm install apollo-server graphql graphql-tools mongoose 
 npm install typescript ts-node ts-lib @types/node -g
 npm install dotenv -g
@@ -12,7 +11,7 @@ npm install nodemon --save-dev
 ```
 
 - Create TS-config
-```console
+```bash
 tsc --init
 ```
 
@@ -45,17 +44,17 @@ tsc --init
   ``` 
   MONGO_URI = [mongodb+srv://... (your mongoose URI)]
   PORT = 4000
-```
+  ```
 
 
 ## Compile TypeScript to JavaScript
 To watch `TypeScript` file changes and convert to `JavaScript`
-```console
+```bash
 npx tsc -w
 ```
 
 ## Running
-```console
+```bash
 npm install 
 npm run watch
 npm run dev
