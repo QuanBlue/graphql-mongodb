@@ -14,17 +14,17 @@ export const bookSchema = gql`
         _id: ID!
         name:  String
         genre:  String
-        author: [Author]
+        author: Author
     }
 
     type Query {
         getAllBooks: [Book]
-        getBookByID(id: ID!): Book
+        getBookById(id: ID!): Book
     }
 
     type Mutation {
-        createBook(name:  String, genre:  String, authorID: ID!): Book
-        updateBook(name:  String, genre:  String, authorID: ID!): Book
+        createBook(name:  String, genre:  String, authorId: ID!): Book
+        updateBook(id: ID!, name:  String, genre:  String, authorId: ID): Book
         deleteBook(id: ID!): Book
     }
 `

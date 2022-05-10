@@ -1,36 +1,30 @@
 [{
-    "_id": "1",
     "name": "Tat den",
     "genre": "Tieu thuyet",
-    "author_id": "1"
+    "authorId": "6278e5c5d4a5cc019fd91173"
 },
 {
-    "_id": "2",
     "name": "Chi Pheo",
     "genre": "Truyen ngan",
-    "authorId": "2"
+    "authorId": "6278e5c5d4a5cc019fd91174"
 },
 {
-   "_id": 3,
     "name": "So do",
     "genre": "Tieu thuyet",
-    "authorId": 3
+    "authorId": "6278e5c5d4a5cc019fd91175"
 },
 {
-   "_id": 4,
     "name": "Doi thua",
     "genre": "Truyen ngan",
-    "authorId": 2
+    "authorId": "6278e5c5d4a5cc019fd91174"
 },
 {
-   "_id": 5,
     "name": "Song mon",
     "genre": "Tieu thuyet",
-    "authorId": 2
+    "authorId": "6278e5c5d4a5cc019fd91174"
 },
 {
-   "_id": 6,
     "name": "Ky nghe lay Tay",
     "genre": "Phong su",
-    "authorId": 3
+    "authorId": "6278e5c5d4a5cc019fd91175"
 }]

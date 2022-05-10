@@ -1,16 +1,22 @@
 [
 	{
-		"_id": 1,
+		"_id": {
+			"$oid": "6278e5c5d4a5cc019fd91173"
+		},
 		"name": "Ngo Tat To",
 		"age": 127
 	},
 	{
-		"_id": 2,
+		"_id": {
+			"$oid": "6278e5c5d4a5cc019fd91174"
+		},
 		"name": "Nam Cao",
 		"age": 106
 	},
 	{
-		"_id": 3,
+		"_id": {
+			"$oid": "6278e5c5d4a5cc019fd91175"
+		},
 		"name": "Vu Trong Phung",
 		"age": 109
 	}

@@ -1,10 +1,8 @@
-import { error } from "console";
-import { authorModel } from "./author.model"
+import { authorModel } from "./author.model";
 
 export async function getAllAuthors() {
     try {
         const authors = await authorModel.find().lean();
-
         return authors
     }
     catch (err) {
@@ -14,7 +12,7 @@ export async function getAllAuthors() {
 
 export async function getAuthorById(id: String) {
     try {
-        const author = await authorModel.findById(id).lean();
+        const author: Author = await authorModel.findById(id).lean();
 
         return author;
     }
@@ -27,8 +25,7 @@ export async function createAuthor(author) {
     try {
         await authorModel.create({
             name: author.name,
-            email: author.email,
-            phone: author.phone
+            age: author.age
         });
     }
     catch (err) {
@@ -44,8 +41,6 @@ export async function updateAuthor(a) {
             },
             {
                 name: a.name,
-                email: a.email,
-                phone: a.phone
             });
     }
     catch (err) {

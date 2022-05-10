@@ -4,28 +4,26 @@ declare global {
     type Author = {
         _id: String
         name: String
-        email: String
-        phone: String
+        age: Number
     }
 }
 
 export const authorSchema = gql`
     type Author {
         _id: ID!
-        name:  String      
-        email:  String
-        phone:  String
+        name:  String
+        age: Int      
     }
 
     # ROOT TYPE 
     type Query {
         getAllAuthors: [Author]
-        getAuthorByID(id: ID!): Author
+        getAuthorById(id: ID!): Author
     }
 
     type Mutation {
-        createAuthor(name:  String, email:  String, phone:  String): Author
-        updateAuthor(id: ID!, name:  String, email:  String, phone:  String): Author
+        createAuthor(name:  String, age: Int): Author
+        updateAuthor(id: ID!, name:  String, age: Int): Author
         deleteAuthor(id: ID!): Author
     }
 `

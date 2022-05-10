@@ -3,8 +3,7 @@ import { Schema, model } from "mongoose";
 const authorSchema = new Schema(
     {
         name: { type: String },
-        email: { type: String },
-        phone: { type: String }
+        age: { type: Number }
     },
     { timestamps: true }
 

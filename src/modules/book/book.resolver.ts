@@ -1,22 +1,46 @@
-import * as bookService from "./book.service"
-import * as authorService from "../author/author.service"
+import * as authorService from "../author/author.service";
+import * as bookService from "./book.service";
 
 export const bookResolver = {
     Query: {
-        getAllBooks: (root, args, context) => {
-
-            const books = bookService.getAllBooks();
+        getAllBooks: async (root, args, context) => {
+            const books: Book = await bookService.getAllBooks();
 
             return books
+        },
+
+        getBookById: async (root, args, context) => {
+            const id = args.id;
+            console.log("[Info] Get book by ID <", id, ">");
+
+            const book: Book = await bookService.getBookById(id);
+            return book
+        }
+    },
+
+    Mutation: {
+        createBook: async (root, args, context) => {
+            console.log("[Info] Create a book")
+            await bookService.createBook(args);
+        },
+
+        updateBook: async (root, args, conntext) => {
+            console.log("[Info] Update book");
+            await bookService.updateBook(args);
+        },
+
+        deleteBook: async (root, args, conntext) => {
+            console.log("[Info] Delete book");
+            await bookService.deleteBook(args.id)
         }
     },
 
     Book: {
-        author: (root, args, context) => {
+        author: async (root, args, context) => {
             //find author by author id
-            const authorID: String = root.authorId;
+            const authorId: String = root.authorId
+            const author: Author = await authorService.getAuthorById(authorId);
 
-            const author = authorService.getAuthorById(authorID);
             return author;
         }
     }

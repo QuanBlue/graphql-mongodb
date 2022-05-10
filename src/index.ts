@@ -1,17 +1,13 @@
 require("dotenv").config({ path: __dirname + '..\\..\\.env' });
 
-import express from 'express'
+import { mergeResolvers, mergeTypeDefs } from "@graphql-tools/merge";
+import { ApolloServer } from 'apollo-server';
 import * as database from './config/database.config';
+import { authorResolver } from './modules/author/author.resolver';
+import { authorSchema } from './modules/author/author.schema';
+import { bookResolver } from './modules/book/book.resolver';
+import { bookSchema } from './modules/book/book.schema';
 
-import { ApolloServer } from 'apollo-server'
-
-import { mergeTypeDefs, mergeResolvers } from "@graphql-tools/merge"
-
-import { authorSchema } from './modules/author/author.schema'
-import { authorResolver } from './modules/author/author.resolver'
-
-import { bookSchema } from './modules/book/book.schema'
-import { bookResolver } from './modules/book/book.resolver'
 
 const main = async () => {
     // connect to mongoDB
@@ -25,9 +21,7 @@ const main = async () => {
         typeDefs,
     })
 
-    let url: String = "http://localhost:4000";
-
-    server.listen().then(({ url }) => {
+    server.listen({ port: process.env.PORT }).then(({ url }) => {
         console.log(`[Info] Server ready at ${url}`)
     })
 }
