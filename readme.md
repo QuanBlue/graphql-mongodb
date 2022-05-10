@@ -1,42 +1,42 @@
 # Test GraphQL
 
-## Install
+## Create project
 - Install package
-```bash
-npm init
-npm install apollo-server graphql graphql-tools mongoose 
-npm install typescript ts-node ts-lib @types/node -g
-npm install dotenv -g
-npm install nodemon --save-dev
-```
+  ```bash
+  npm init
+  npm install apollo-server graphql graphql-tools mongoose 
+  npm install typescript ts-node ts-lib @types/node -g
+  npm install dotenv -g
+  npm install nodemon --save-dev
+  ```
 
 - Create TS-config
-```bash
-tsc --init
-```
+  ```bash
+  tsc --init
+  ```
 
 - Customize `tsconfig.json` file:
-```json
-{
-  "compilerOptions": {
-    "target": "es2016",
-    "lib": [
-      "es6"
-    ],
-    "module": "commonjs",
-    "rootDir": "src",
-    "resolveJsonModule": true,
-    "allowJs": true, 
-    "outDir": "dist", 
-    "esModuleInterop": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"],
-  "ts-node": {
-    "files": true
+  ```json
+  {
+    "compilerOptions": {
+      "target": "es2016",
+      "lib": [
+        "es6"
+      ],
+      "module": "commonjs",
+      "rootDir": "src",
+      "resolveJsonModule": true,
+      "allowJs": true, 
+      "outDir": "dist", 
+      "esModuleInterop": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"],
+    "ts-node": {
+      "files": true
+    }
   }
-}
-```
+  ```
 
 - Import **fake data** in `./graphQl/fake data` to your `MongoDB database` with 2 collection `authors` and `books`
 
@@ -48,12 +48,10 @@ tsc --init
   PORT = 4000
   ```
 
-
-## Compile TypeScript to JavaScript
-To watch `TypeScript` file changes and convert to `JavaScript`
-```bash
-npx tsc -w
-```
+- To watch `TypeScript` file changes and convert to `JavaScript`
+  ```bash
+  npx tsc -w
+  ```
 
 ## Running
 ```bash
@@ -77,5 +75,5 @@ npm run dev
   - **Way 1**: [User **graphql-tools**](https://www.apollographql.com/docs/graphql-tools/generate-schema/)
   - **Way 2**: [User **type-graphql**](https://typegraphql.com/docs/getting-started.html)
   - **Way 3**: [Use **autoloader-ts**](https://www.npmjs.com/package/autoloader-ts?activeTab=readme) (for Huge project)
-- **Save**, **Create** and **Insert** in mongoDB: [MongoDB - Save, Create, Insert](https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create)
+- Distinguish **Save**, **Create** and **Insert** in mongoDB: [MongoDB - Save, Create, Insert](https://stackoverflow.com/questions/38290684/mongoose-save-vs-insert-vs-create)
 - Declare **global type TS**: [TypeScript make type global](https://bobbyhadz.com/blog/typescript-make-types-global) and [Global type in typescript](https://stackoverflow.com/questions/42984889/global-types-in-typescript)
