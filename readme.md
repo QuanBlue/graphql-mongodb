@@ -6,7 +6,7 @@
   npm init
   npm install apollo-server graphql graphql-tools mongoose 
   npm install typescript ts-node ts-lib @types/node -g
-  npm install dotenv -g
+  npm install dotenv
   npm install nodemon --save-dev
   ```
 
