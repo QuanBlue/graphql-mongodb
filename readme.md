@@ -4,8 +4,8 @@
 - Install package
   ```bash
   npm init
-  npm install apollo-server graphql graphql-tools mongoose 
-  npm install typescript ts-node ts-lib @types/node -g
+  npm install apollo-server graphql graphql-tools mongoose @types/node
+  npm install typescript ts-node ts-lib -g
   npm install dotenv
   npm install nodemon --save-dev
   ```
