@@ -1,4 +1,4 @@
-# Test GraphQL
+# GraphQL-MongoDB example
 
 ## Create project
 - Install package
